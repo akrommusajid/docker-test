@@ -1,0 +1,9 @@
+sudo: required
+services:
+ - docker
+
+before_install:
+ - docker build -t akrommusajid/docker-react -f Dockerfile.dev .
+
+script:
+ - docker run akrommusajid/docker-react npm rum test -- --coverage
